@@ -1,33 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState , useCallback } from 'react'
+
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [length , setlenght] = useState(8)
+  const [numallow , setnumallow] = useState(false)
+  const [charallow , setcharallow] = useState(false)
+  const [Password, setPassword] = useState('')
 
+  const generatePassword = useCallback(() => {
+    let pass = ""
+    let str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    if(numallow) str += "0123456789"
+    if(charallow) str += "!@#$%^&*()_+[]{}|;':,./<>?`~"
+    for(let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * str.length)
+      pass += str[randomIndex]
+    }
+    setPassword(pass)
+  },[length, numallow, charallow,setPassword])
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className='w-full max-w-md mx-auto shadow-md rounded-4xl px-4 my8 text-orange-800 bg-gray-700 m-15 text-center'> Test</div>
     </>
   )
 }
