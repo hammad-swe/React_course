@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import useCurrencyinfo from './hooks/useCurrencyinfo'
-import pic from './assets/pic.jpg'
+import {InputBox} from './components/index'
+// import pic from './assets/pic.jpg'
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
         <div
             className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
             style={{
-                backgroundImage: `url('${pic}')`,
+                // backgroundImage: `url('${pic}')`,
             }}
         >
             <div className="w-full">
