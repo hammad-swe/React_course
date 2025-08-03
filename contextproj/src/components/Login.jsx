@@ -20,6 +20,7 @@ const HandleSubmit = (e) => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           type="text" placeholder="Username" />
+          {" "}
           <input 
         value={password}
       onChange={(e) => setPassword(e.target.value)}
