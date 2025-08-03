@@ -1,8 +1,8 @@
 import React from 'react'
-// import { UserContextProvider } from './context/userContextProvider'
+import UserContextProvider from './context/UsercontextProvider'
 import Login from './components/Login'
-import Profile from "./components/Profile"
-import {UserContextProvider} from './context/userContextProvider'
+import Profile from './components/Profile'
+
 import './App.css'
 
 function App() {
